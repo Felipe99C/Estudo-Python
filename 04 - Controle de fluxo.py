@@ -63,3 +63,65 @@ elif "@" not in email or "." not in email:
     print("forneça um e-mail válido")
 else:
     print("Dados de usuário válidos")
+
+
+#%%
+a = ['Mary', 'had', 'a', 'little', 'lamb']
+for i in range(len(a)): #len(a) significa que vai pegar todos os itens de dentro
+    print(i, a[i])
+
+#%%
+#6. Contagem de Palavras em Textos
+#Objetivo: Dado um texto, contar quantas vezes cada palavra  aparece nele.
+
+texto = "Esse é mais uma oportunidade de aprender python! python é uma ótima linguagem para se aprender"
+texto = texto.lower()
+
+palavras = texto.split()
+contagem_palavras ={} 
+for palavra in palavras:
+    if palavra in contagem_palavras:
+        contagem_palavras[palavra] +=1
+    else:
+        contagem_palavras[palavra] = 1
+
+print(contagem_palavras)
+
+#%%
+
+#8. Filtragem de Dados Faltantes
+#Objetivo: Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando.
+
+usuarios = [
+    {"nome": "Alice", "email": "alice@example.com"},
+    {"nome": "Bob", "email": ""},
+    {"nome": "Carol", "email": "carol@example.com"}
+]
+
+usuarios_validos = [usuario for usuario in usuarios if usuario["email"]]
+print(usuarios_validos)
+
+#%%
+# 10. Agregação de Dados por Categoria
+# Objetivo: Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
+
+vendas = [
+    {"categoria": "eletrônicos", "valor": 1200},
+    {"categoria": "livros", "valor": 200},
+    {"categoria": "eletrônicos", "valor": 800}
+]
+
+total_categoria = {}
+for venda in vendas:
+    categoria = venda["categoria"]
+    valor = venda["valor"]
+    if categoria in total_categoria:
+        total_categoria[categoria] += valor
+    else:
+        total_categoria[categoria] = valor
+
+print(total_categoria)
+
+
+#%%
+# While
