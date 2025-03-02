@@ -1,0 +1,5 @@
+produto,preco,categoria,entregue
+cadeira,500,escritorio,True
+mesa,200,escritorio,True
+mouse,50,acessórios,False
+teclado,100,acessorio,False
