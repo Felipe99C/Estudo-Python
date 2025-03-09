@@ -1,13 +1,18 @@
 [project]
-name = "07 - criando uma etl"
+name = "criando-uma-etl"
+# or
+# name = "criando_uma_etl"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Felipe",email = "felipe.r.cardoso@outlook.com"}
+    {name = "Felipe", email = "felipe.r.cardoso@outlook.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pandera (>=0.23.1,<0.24.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "fastparquet (>=2024.11.0,<2025.0.0)"
 ]
 
 
