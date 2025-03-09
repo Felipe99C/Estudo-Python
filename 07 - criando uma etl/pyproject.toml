@@ -5,7 +5,7 @@ name = "criando-uma-etl"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Felipe", email = "felipe.r.cardoso@outlook.com"}
+    {name = "Felipe", email = ""}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
