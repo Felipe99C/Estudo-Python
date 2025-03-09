@@ -4,7 +4,7 @@ import glob
 from loguru import logger
 
 
-logger.add(r"D:\Estudos\Python\Estudo-Python\07 - criando uma etl\meus_logs.log", format="{time} {level} {message} {file} {line}", level="error")
+logger.add(r"D:\Estudos\Python\Estudo-Python\07 - criando uma etl\meus_logs.log", format="{time} {level} {message} {file} {line}", level="CRITICAL")
 # ler e consolidar os arquivos Json num dataframe.
 
 def extrair_dados(pasta: str) -> pd.DataFrame:
@@ -42,13 +42,10 @@ def carregar_dados(df: pd.DataFrame, formato_saida: list):
             df.to_parquet('dados_transformados.parquet')
             logger.info('Dados salvos em Parquet')
 
+def pipeline_calcular_kpi_vendas(pasta: str, formato_saida: list):
+    df = extrair_dados(pasta)
+    df_calculado = calcular_kpi_total_de_vendas(df)
+    carregar_dados(df_calculado, formato_saida)
 
-if __name__ == '__main__':
-    pasta_argumento = 'data'
-    data_frame = extrair_dados(pasta_argumento)
-    data_frame_calculado = calcular_kpi_total_de_vendas(data_frame)
-    formato_saida: list = ['csv', 'parquet']
-    carregar_dados(data_frame_calculado, formato_saida)
-                   
-    print(calcular_kpi_total_de_vendas(data_frame))
+
     
